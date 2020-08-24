@@ -1,0 +1,1 @@
+Hey {{user}}! Your activation key is in here!

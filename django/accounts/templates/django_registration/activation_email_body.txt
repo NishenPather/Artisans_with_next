@@ -1,0 +1,8 @@
+Dear {{user}},
+
+To activate your account, please click the following link: {{scheme}}://{{site}}/accounts/activate/{{activation_key}}
+
+NOTE: This link expires in {{expiration_days}} days!
+
+
+

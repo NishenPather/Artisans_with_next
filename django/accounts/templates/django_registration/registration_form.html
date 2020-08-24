@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  {% include 'frontend/head.html' %}
+  
+</head>
+<body> 
+
+ 
+    <div>
+       
+        <form class='site-form' action="/accounts/register/" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value='Create User!'>
+        </form>
+
+      </div>
+
+      {% include 'frontend/scripts.html' %}
+ 
+    </body>
+    </html>
+          
+     
+
+
+      
+ 
+        
+  

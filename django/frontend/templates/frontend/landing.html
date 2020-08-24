@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}   
+<head> 
+ {% include 'frontend/head.html' %}
+
+ 
+</head>
+
+
+  <body class="is-preload"> 
+
+   
+   	<!-- Wrapper-->
+     <div id="wrapper">
+     
+      
+        <h1 class="main_heading"><a href="/" class="ArtisansHeading" style="text-decoration: none; color: inherit;">  Artisans </a> </h1>
+      
+      
+        <nav id="nav">
+
+          <a href="#" class="icon solid fa-home"><span>Home</span></a>
+          <a href="#login" class="icon solid fa-address-card"><span>Login</span></a>
+          <a href="#about" class="icon solid fa-info-circle"><span>About</span></a>
+        </nav>
+
+      
+        <div id="main">
+
+        
+          <article id="home" class="panel intro">
+         <header>
+           <h2>Artisans Landing page</h2><br>
+          <p>This will be mostly static info, and from here, users will access the consumer application, or the "Artisans" portal for business owners</p>
+        </header>
+            
+            
+            <a href="#login" class="jumplink pic">
+              <span class="arrow icon solid fa-chevron-right"><span>Login</span></span>
+            </a>
+
+          </article>
+        
+    
+     
+        <article id="login" class="panel">
+
+          <header>
+            <h2>Enter your portal!</h2>
+          </header>
+          <a href='/accounts/'><button type='login'>Login</button></a>
+          <a href='/accounts/register'><button type='button'>Sign up!</button></a>
+          
+        </article>
+
+        <article id="about" class="panel">
+          <h2>Our mission</h2>
+          <p>Some discussion about the whole mission</p>
+        </article>
+
+        </div>
+
+    
+        <div id="footer">
+          <ul class="copyright">
+            <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      
+
+    </div>
+
+ {% include 'frontend/scripts.html' %}
+    
+
+  </body>
+</html>

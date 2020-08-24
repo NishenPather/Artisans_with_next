@@ -1,0 +1,8 @@
+Great extension to install for react: ES7 React/Redux/GraphQL etc. 
+useful for creating react components:
+      type "rce" and click tab to autocreate a components
+
+Given that we have "--watch" in the script, we only need to run npm build dev once i think, maybee not at all
+
+
+Would love to build personal CSS "library" of reusable components

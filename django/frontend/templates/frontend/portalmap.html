@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ {% load static %}
+<head>
+
+<!--Mapbox sheets-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+<link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+  type="text/css"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<!--Mapbox stuff over-->
+
+<link rel="stylesheet" href="{% static 'landingmap/map.css' %}">
+
+
+
+</head>
+
+<body>
+
+<div class='map' id='map'></div>
+<script> 
+
+/* This will let you use the .remove() function later on */
+if (!('remove' in Element.prototype)) {
+  Element.prototype.remove = function() {
+    if (this.parentNode) {
+      this.parentNode.removeChild(this);
+    }
+  };
+}
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2F5ZzR0N3QwYXkzMnpsbmdtanI5eWk4In0.QPGQ4z5xUCdmfs21kR5y_w';
+  
+
+  var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/alexbohlin/ckcoxlqwo0nx01ir619t0m2xp',
+        center: [-74.157261, 40.429158],
+        zoom: 13,
+    });
+
+  map.addControl(new mapboxgl.NavigationControl()); //This is for zoom etc.
+
+  map.addControl(
+      new mapboxgl.GeolocateControl({
+          positionOptions: {
+              enableHighAccuracy: true
+          },
+          trackUserLocation: true
+      })
+  );
+  map.addControl(new mapboxgl.FullscreenControl());
+
+
+  var user_address= "{% for object in store %}{{ object.address }}{% endfor  %}"
+  //will need user point coordinates from database. make a long and lat variable, then set as map centre. 
+
+   
+  map.on('load', () => {
+      // add the data source for new a feature collection with no features
+      map.addSource('stores', {
+        type: 'geojson',
+        data: "http://127.0.0.1:8000/geojson/api/geo/?format=json"
+      });
+      // now add the layer, and reference the data source above by name
+      map.addLayer({
+        id: 'stores',
+        source: 'stores',
+        type: 'symbol',
+        layout: {
+          // full list of icons here: https://labs.mapbox.com/maki-icons
+          'icon-image': 'restaurant-15', // this will put little croissants on our map
+          'icon-padding': 0,
+          'icon-allow-overlap': true,
+        },
+      });
+  });
+
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken, // Set the access token
+      mapboxgl: mapboxgl, // Set the mapbox-gl instance
+      marker: true, // Use the geocoder's default marker style
+    });
+    
+    map.addControl(geocoder, 'top-left');
+
+
+    map.on('click', 'stores', function(e) {
+      var coordinates = e.features[0].geometry.coordinates.slice();
+      var title = '<h3>' + e.features[0].properties.name + '</h3>'; // Set the store name
+      var storeType = '<h4>' + e.features[0].properties.shop_type + '</h4>'; // Set the store type
+      var storeAddress = '<p>' + e.features[0].properties.address + '</p>'; // Set the store address
+
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+
+      var content = title + storeType + storeAddress; // All the HTML elements
+
+      new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(content)
+        .addTo(map);
+      });
+ 
+        
+
+       
+
+
+</script>
+
+
+</body>
+
+</html>
+

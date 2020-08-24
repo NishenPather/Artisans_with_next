@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  {% include 'frontend/head.html' %}
+  
+</head>
+<body> 
+
+
+
+
+
+      <div>     
+          <p style="color:black">Don't have an account?<a href="/accounts/register" title="">Sign up!</a></p>  
+      </div>    
+    
+  
+ <div> 
+
+  <form action="/accounts/" method="post">
+    {% csrf_token %}
+    <div>
+      <div class="row">
+        <div class="col-6 col-12-medium">
+          <input type="text" name="username" placeholder="Username" />
+        </div>
+        <div class="col-6 col-12-medium">
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <div class="col-12">
+          <input type="submit" value="Login" />
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  {% include 'frontend/scripts.html' %}
+ 
+</body>
+</html>
+      
+ 
+   
+   
+ 
+
+  
+
+
+
+
+
+
+
+ 

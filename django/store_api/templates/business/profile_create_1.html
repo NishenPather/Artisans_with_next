@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  {% include 'frontend/head.html' %}
+
+  {% load mapbox_location_field_tags %}
+  {% location_field_includes %}
+  {% include_jquery %}
+  
+
+
+
+</head>
+
+<body>
+
+}
+
+  <div id="details"> 
+
+    
+ <form class='site-form' method="POST" action="">   
+{% csrf_token %}
+{{form}}
+<input type ="submit" value="Save this data">
+</form>
+{{ form.media }}
+
+</div>
+
+
+
+{% include 'frontend/scripts.html' %}
+
+</body>
+
+</html>

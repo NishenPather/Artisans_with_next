@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}   
+
+  <head>  
+   
+    {% include 'frontend/head.html' %}
+    
+    <!--Mapbox sheets-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <!--Mapbox stuff over-->
+    <link rel="stylesheet" href="{% static 'portal/map.css' %}">
+
+  </head>
+
+            
+       
+  <header>
+    <div id='navbar'>
+      <a href='/'><button type='button' value='Home'>Home</button></a>
+      <a href='/accounts/logout'><button type="button" value="Logout">Logout</button></a> 
+    </div>
+  </header>
+  
+  
+  
+  <div id="main">  
+  
+    
+    
+        <div id="hello"> 
+           <h2>Hello {{user}}!</h2>
+        </div>    
+      
+      
+  
+        <div id="store" class="col-lg">
+          
+          
+            <h1>Stores</h1>
+            <a href="/creation"> Add a new location</a> 
+            
+           {% for object in business %}
+            <h2>{{ object.name }}</h2>
+            <a href="/edit" class="btn btn-md">Modify details</a><br>
+            <p>{{ object.name }} is a {{ object.shop_type }}</p><br>
+            <p>Bio: {{ object.bio }}</p><br>
+            <p>Phone: {{ object.Phone }}</p>
+            <p>Address: {{ object.address }} </p>
+          {% endfor  %}
+        </div>
+        
+    
+ 
+          <div id="app"></div>
+
+
+          
+         
+
+    
+
+    
+          {% include 'frontend/scripts.html' %}
+          <script src="{% static 'portal/main.js' %}"></script> 
+
+
+  </body>
+</html>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
