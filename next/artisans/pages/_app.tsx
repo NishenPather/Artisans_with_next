@@ -1,7 +1,9 @@
 import App, {Container} from 'next/app';
-
 import React from 'react';
 import '../styles/globals.css'
+import { AuthProvider } from '../context/auth';
+
+import Router from 'next/router'
 
 
 function MyApp({ Component, pageProps }) {
@@ -10,10 +12,12 @@ function MyApp({ Component, pageProps }) {
         
 
         return (
-           
+          
+          <AuthProvider>
                 <Layout>
                 <Component {...pageProps} />
                 </Layout>
+          </AuthProvider>
             
         );
     }

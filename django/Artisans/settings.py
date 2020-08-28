@@ -48,9 +48,14 @@ INSTALLED_APPS = [
     'rest_framework_gis',
     'phonenumber_field',
     'corsheaders',
+    'knox',
 ]
 
 MAPBOX_KEY = "pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2F5ZzR0N3QwYXkzMnpsbmdtanI5eWk4In0.QPGQ4z5xUCdmfs21kR5y_w"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

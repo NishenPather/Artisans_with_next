@@ -1,7 +1,7 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Head from 'next/head';
-import Header from './Header'
+import Navbar from './Navbar'
 
 function DefaultLayout({ children }) {
 
@@ -17,7 +17,8 @@ function DefaultLayout({ children }) {
     </Head>
 
     <div className={styles.container}>
-      <Header />
+     
+      <Navbar />
     <main className={styles.main}>
     {children} 
     </main>

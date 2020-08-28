@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import styles from './map.module.css'
 import Head from 'next/head';
-import Header from '../Layout/Header'
-import BackButton from '../buttons/Backbutton'
+import Navbar from '../Layout/Navbar'
+
 
 import Popup from './Popup'
 
@@ -112,7 +112,7 @@ return (
         <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
         </Head>
-      <Header />
+      <Navbar />
       <div>
           <section>
             <div className={styles.mapwrapper}> 

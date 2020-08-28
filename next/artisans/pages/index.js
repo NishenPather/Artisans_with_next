@@ -37,9 +37,9 @@ export default function Home() {
         </Link>
         </div>
         <div className={styles.card}>
-        <Link href='/extra'>
+        <Link href='/dashboard'>
           <a>
-            <h3>Extra</h3>
+            <h3>ArtisanProfile</h3>
             <p>Another page added for symmetry</p>
           </a>  
         </Link>
