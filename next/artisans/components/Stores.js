@@ -5,6 +5,8 @@ import { useAuth } from "../context/auth"
 import api from '../services/axiosAPI'
 import Router from 'next/router'
 import { routes } from '../services/routes'
+import Table from 'react-bootstrap/Table'
+
 
   
 
@@ -30,9 +32,9 @@ function Stores() {
   
     return (
       <Fragment>
-        <h1>Stores</h1>
+        <h3>Stores</h3>
         <div> 
-        <table className="default">
+        <Table striped bordered hover size="lg">
           <thead>
             <tr>
               <th>Name</th>
@@ -50,13 +52,10 @@ function Stores() {
                 <td>{store.bio}</td>
                 <td>{store.Phone}</td>
                 <td>{store.address}</td>
-                <td><button className="btn btn-danger btn-sm">Profile</button></td>
-                <td><button className="btn btn-default btn-sm">Edit</button></td>
-                <td><button className="btn btn-danger btn-sm">Delete</button></td>
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
         </div>
 
       </Fragment>

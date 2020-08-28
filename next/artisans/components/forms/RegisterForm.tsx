@@ -42,7 +42,7 @@ export default function RegisterForm({ title, route }: AuthProps) {
                 </Row>
 
                 <Row className="justify-content-md-center">
-                    <Col md="3">
+                    <Col md="12">
                         <Form onSubmit={handleFormSubmit}>
 
                            <Form.Group controlId="formBasicEmail">

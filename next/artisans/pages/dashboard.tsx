@@ -21,6 +21,7 @@ function dashboard() {
         <div>
 
           <h1>Dashboard</h1>
+          <br></br>
           <Stores />
         
         </div>

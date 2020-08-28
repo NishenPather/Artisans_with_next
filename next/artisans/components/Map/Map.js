@@ -2,8 +2,11 @@ import React, { Component, useRef, useEffect } from 'react'
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import styles from './map.module.css'
-import Head from 'next/head';
+
 import Navbar from '../Layout/Navbar'
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
+
 
 
 import Popup from './Popup'
@@ -31,6 +34,13 @@ const MapFunction = () => {
 
     // add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    });
+    
+    map.addControl(geocoder, 'top-left');
 
     
 
@@ -104,21 +114,12 @@ const MapFunction = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 return (
       <> 
-        <Head>
-        <title>Artisans</title>
-        <meta charSet="utf-8" />
-        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />       
-        <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-        </Head>
-      <Navbar />
+        
       <div>
-          <section>
+          
             <div className={styles.mapwrapper}> 
-            <div className={styles.mapcontainer} ref={mapContainerRef} />
-            </div>
-            </section>
+            <div className={styles.mapcontainer} ref={mapContainerRef} /> </div>
+           
         </div>
         </>
 )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar as BootstrapNavbar, NavDropdown, Nav, Container, NavLink } from 'react-bootstrap';
+import { Navbar as BootstrapNavbar, Nav, Container, } from 'react-bootstrap';
 
 import Link from 'next/link'
 import { useAuth } from '../../context/auth';

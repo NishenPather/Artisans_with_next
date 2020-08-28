@@ -2,6 +2,7 @@ import App, {Container} from 'next/app';
 import React from 'react';
 import '../styles/globals.css'
 import { AuthProvider } from '../context/auth';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Router from 'next/router'
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form, } from 'react-bootstrap'
+import  Button  from 'react-bootstrap/Button'
 import api from '../../services/axiosAPI'
 import  { useAuth }  from '../../context/auth'
 
@@ -41,7 +42,7 @@ export default function AuthForm({ title, route }: AuthProps) {
                 </Row>
 
                 <Row className="justify-content-md-center">
-                    <Col md="6">
+                    <Col md="12">
                         <Form onSubmit={handleFormSubmit}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Label>Username: </Form.Label>
