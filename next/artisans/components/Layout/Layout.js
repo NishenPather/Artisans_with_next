@@ -29,15 +29,15 @@ function DefaultLayout({ children }) {
       <footer className={styles.footer}>
        <p><a href="https://twitter.com/alex_bohlin">Alex Bohlin</a></p>
       </footer>
-      <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></script>
+      <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin="true"></script>
 
       <script
         src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-        crossOrigin></script>
+        crossOrigin="true"></script>
 
       <script
         src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-        crossOrigin></script>
+        crossOrigin="true"></script>
 
         <script>var Alert = ReactBootstrap.Alert;</script>
       </div>
