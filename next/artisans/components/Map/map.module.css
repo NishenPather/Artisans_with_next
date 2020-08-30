@@ -14,12 +14,10 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
 
 .mapwrapper {
   position: relative;
-  margin: 0 auto;
   width: 75%;
-  height: 680px;
   justify-content: center;
   align-items: center;
-  top: 35PX;
+
 }
 
 .mapcontainer {

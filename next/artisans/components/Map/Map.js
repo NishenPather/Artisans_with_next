@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import styles from './map.module.css'
 
-import Navbar from '../Layout/Navbar'
+
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
 
 
 
@@ -114,6 +115,7 @@ const MapFunction = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 return (
       <> 
+      
         
       <div>
           

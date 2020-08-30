@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
 import DefaultLayout from '../components/Layout/Layout'
 import Head from 'next/head';
-import mapboxgl from 'mapbox-gl';
-import styles from '../components/Map/map.module.css'
 
-const DynamicMap = dynamic(() => import("../components/Map/Map"), {
+
+
+const DynamicMap = dynamic(() => import("../components/ReactMap/Reactmap"), {
   loading: () => <h3>Loading...</h3>,
   ssr: false
 });
@@ -29,7 +29,7 @@ function Map() {
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
         </Head>
-<h1>This is the map to search for Artisans. This text is necessary to render the map</h1>
+     <h1>I need this text to render the map</h1>
         <div> 
       <DynamicMap />
       </div>
