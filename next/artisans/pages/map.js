@@ -1,19 +1,21 @@
 import dynamic from 'next/dynamic';
 import DefaultLayout from '../components/Layout/Layout'
 import Head from 'next/head';
+import styles from '../styles/Home.module.css'
 
 
 
-const DynamicMap = dynamic(() => import("../components/ReactMap/Reactmap"), {
+const DynamicMap = dynamic(() => import("../components/ReactMap/Mapwtooltip"), {
   loading: () => <h3>Loading...</h3>,
   ssr: false
 });
 
 
 
+
 function Map() {
   return (
-    <div>
+    <div  >
       <Head>
         <title>Artisans</title>
                
@@ -29,8 +31,13 @@ function Map() {
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
         </Head>
-     <h1>I need this text to render the map</h1>
-        <div> 
+     
+        <h1 className={styles.mainHeading}>
+          Discover Artisans 
+        </h1>
+        <br></br>
+        <br></br>
+        <div>
       <DynamicMap />
       </div>
      

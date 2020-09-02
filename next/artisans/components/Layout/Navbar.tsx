@@ -7,7 +7,8 @@ import { useAuth } from '../../context/auth';
 export default function Navbar() {
     const { isAuthenticated } = useAuth()
     return (
-        <BootstrapNavbar bg="light" expand="lg">
+      <div style={{width: "1000px", backgroundColor: "#f5f1ec"}}> 
+        <BootstrapNavbar expand="lg">
             <Container>
                 <Link href="/">
                     <a>
@@ -26,6 +27,7 @@ export default function Navbar() {
                 </BootstrapNavbar.Collapse>
             </Container>
         </BootstrapNavbar>
+        </div>
     )
 }
 

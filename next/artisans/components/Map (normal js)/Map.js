@@ -13,7 +13,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import Popup from './Popup'
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2F5ZzR0N3QwYXkzMnpsbmdtanI5eWk4In0.QPGQ4z5xUCdmfs21kR5y_w';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2VpdGQyMGMxanZlMnpwcXQ4Y2NuZzJ1In0.xnmTSVLs6_bcpA5hipyw3g';
 
 
 const MapFunction = () => {

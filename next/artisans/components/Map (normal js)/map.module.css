@@ -8,9 +8,6 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
 
 
 
-.pad2 {
-  padding: 0;
-}
 
 .mapwrapper {
   position: relative;
@@ -32,7 +29,6 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
 
 
 
-
 .clearfix {
   display: block;
 }
@@ -45,23 +41,32 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
 }
 
 /* Marker tweaks */
-.mapboxgl-popup {
-  padding-bottom: 50px;
-}
 
-.mapboxgl-popup-close-button {
-  display: none;
-}
-.mapboxgl-popup-content {
+
+
+.popupContent {
   font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
   padding: 0;
   width: 180px;
 }
-.mapboxgl-popup-content-wrapper {
+.popupContentwrapper {
   padding: 1%;
 }
-.mapboxgl-popup-content h3 {
-  background: rgb(109, 190, 204);
+
+.popupContent h1 {
+  background: rgba(255, 255, 255, 0.788);
+  color: black ;
+  margin: 0;
+  display: block;
+  padding: 10px;
+  border-radius: 3px 3px 0 0;
+  font-weight: 700;
+  margin-top: -15px;
+  font-size: 22px;
+}
+
+.popupContent h3 {
+  background: rgb(7, 5, 1);
   color: #fff ;
   margin: 0;
   display: block;
@@ -69,31 +74,26 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
   border-radius: 3px 3px 0 0;
   font-weight: 700;
   margin-top: -15px;
+  font-size: 18px;
 }
 
-.mapboxgl-popup-content h4 {
+.popupContent h4 {
   margin: 0;
   display: block;
   padding: 10px 10px 10px 10px;
   font-weight: 400;
 }
 
-.mapboxgl-popup-content div {
+.popupContent div {
   padding: 10px;
 }
 
-.mapboxgl-container .leaflet-marker-icon {
-  cursor: pointer;
-}
 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+.popupAnchorTop > .mapboxgl-popup-content {
   margin-top: 15px;
 }
 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-  border-bottom-color: #48C9B0;
-}
-.mapboxgl-ctrl-geocoder {
+.react-geocoder {
   border: 0;
   border-radius: 0;
   position: relative;
@@ -103,7 +103,29 @@ Seems absolutely necessary to include store photos in the popup (similar to Airb
   margin-top: 0;
 }
 
-.mapboxgl-ctrl-geocoder > div {
+.ctrlGeocoder > div {
   min-width: 100%;
   margin-left: 0;
+}
+
+.tooltip {
+  position: absolute;
+  margin: 8px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  max-width: 240px;
+  font-size: 14px;
+  font-weight: 700;
+  pointer-events: none;
+  height: 28px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.tooltip h1 {
+  font-size: 22px;
+}
+
+.tooltip h3 {
+  font-size: 15px;
 }

@@ -14,20 +14,22 @@ function DefaultLayout({ children }) {
       <meta charSet="utf-8" />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta content="width=device-width, initial-scale=1" name="viewport" /> 
-  
+      <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet"></link>
     </Head>
-    <Navbar />
+    
 
     <div className={styles.container_main}>
-     
+    
+    <Navbar />
       
     <main className={styles.main}>
+    
     {children} 
     </main>
     
      
       <footer className={styles.footer}>
-       <p><a href="https://twitter.com/alex_bohlin">Alex Bohlin</a></p>
+       <p><a href="https://sites.google.com/view/artisansdevsite//">Alex Bohlin</a></p>
       </footer>
       <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin="true"></script>
 
@@ -41,7 +43,7 @@ function DefaultLayout({ children }) {
 
         <script>var Alert = ReactBootstrap.Alert;</script>
       </div>
-   
+      
     </>
   )
 }

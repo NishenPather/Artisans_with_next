@@ -2,14 +2,17 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import  DefaultLayout from '../components/Layout/Layout'
 
+
 export default function Home() {
   return (
+    <>
     
       <div> 
-        <h1 className={styles.title}>
-          You've landed
+        <h1 className={styles.mainHeading}>
+          Artisans
         </h1>
-        <p className={styles.description}> But, we're under construction.</p>
+        <br></br>
+        <br></br>
 
         <div className={styles.grid}> 
         <div className={styles.card}>
@@ -47,6 +50,7 @@ export default function Home() {
         
         </div>
         </div>
+        </>
   )
 }
 

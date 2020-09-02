@@ -22,6 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'hn0oe5d19_x$*3h7c5yfok-3^)bhm9a4m-9u+vyl)da1gk$g@3'
 
+#I intend on creating a new DJango project for production, which will use a new secret key
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -51,7 +53,7 @@ INSTALLED_APPS = [
     'knox',
 ]
 
-MAPBOX_KEY = "pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2F5ZzR0N3QwYXkzMnpsbmdtanI5eWk4In0.QPGQ4z5xUCdmfs21kR5y_w"
+MAPBOX_KEY = "pk.eyJ1IjoiYWxleGJvaGxpbiIsImEiOiJja2VpdGQyMGMxanZlMnpwcXQ4Y2NuZzJ1In0.xnmTSVLs6_bcpA5hipyw3g"
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
@@ -104,7 +106,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'testing',
         'USER': 'postgres',
-        'PASSWORD': 'AntHerm520',
+        'PASSWORD': 'developmentPassword',
         'HOST': '34.86.210.172',
         'PORT': '5432'
     }
