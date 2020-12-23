@@ -52,9 +52,9 @@ export default class LatestMap extends Component {
       hoveredFeature: null,
       clickedFeature: null,
       viewport: {
-        latitude: 40.4,
-        longitude: -74.157261,
-        zoom: 8,
+        latitude: 44.4949,
+        longitude: 11.3426,
+        zoom: 13,
         bearing: 0,
         pitch: 0
       },

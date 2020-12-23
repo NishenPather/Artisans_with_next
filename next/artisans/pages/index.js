@@ -8,42 +8,20 @@ export default function Home() {
     <>
     
       <div> 
-        <h1 className={styles.mainHeading}>
-          Artisans
-        </h1>
-        <br></br>
-        <br></br>
-
         <div className={styles.grid}> 
         <div className={styles.card}>
         <Link href='/map'>
           <a>
-            <h3>Map</h3>
-            <p>Discover Artisans</p>
-          </a>  
-        </Link>
-        </div>
-        <div className={styles.card}>
-        <Link href='/profile/[username]'>
-          <a>
-            <h3>Profile</h3>
-            <p>Login, or create a new profile</p>
-          </a>  
-        </Link>
-        </div>
-        <div className={styles.card}>
-        <Link href='/mission'>
-          <a>
-            <h3>Mission</h3>
-            <p>Learn what this is all about</p>
+            <h3 className={styles.link}>Map</h3>
+            <p className={styles.link}>Discover Artisans</p>
           </a>  
         </Link>
         </div>
         <div className={styles.card}>
         <Link href='/dashboard'>
           <a>
-            <h3>ArtisanProfile</h3>
-            <p>Another page added for symmetry</p>
+            <h3 className={styles.link}>Profile</h3>
+            <p  className={styles.link}>Access your dashboard</p>
           </a>  
         </Link>
         </div>

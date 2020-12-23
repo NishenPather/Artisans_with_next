@@ -32,13 +32,15 @@ function Map() {
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
         </Head>
      
-        <h1 className={styles.mainHeading}>
-          Discover Artisans 
+     <div className={styles.card}>
+        <h1 className={styles.subHeading}>
+          Find locally-sourced goods anywhere 
         </h1>
         <br></br>
         <br></br>
         <div>
       <DynamicMap />
+      </div>
       </div>
      
     </div>

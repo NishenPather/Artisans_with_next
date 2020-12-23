@@ -4,11 +4,16 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../public/Watercolours.png");
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../../../yellow.jpg");
+  background-repeat: no-repeat;
+            background-size:100% 100%;
+            -o-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            background-size:cover;
 }
 
-a {
-  color: inherit;
+body > div > a {
+  color: black;
   text-decoration: none;
 }
 

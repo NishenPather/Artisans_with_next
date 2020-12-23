@@ -4,6 +4,7 @@ import { Row, Col, Form, } from 'react-bootstrap'
 import  Button  from 'react-bootstrap/Button'
 import api from '../../services/axiosAPI'
 import  { useAuth }  from '../../context/auth'
+import styles from '../../styles/Home.module.css'
 
 export interface AuthProps {
     title: string,
@@ -32,7 +33,8 @@ export default function AuthForm({ title, route }: AuthProps) {
     }
 
     return (
-        <div>
+     
+        <div className={styles.card}>
                 <Row className="justify-content-md-center">
                     <Col md="auto" className="pt-5">
                         <h3>
