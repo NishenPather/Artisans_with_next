@@ -1,22 +1,23 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Head from 'next/head';
-import Navbar from './Navbar'
+import HomeNav from './HomeNav'
 import Search from '../Search'
 import Footer from './Footer'
 import MyHead from './Head'
 
-function DefaultLayout({ children }) {
+function HomeLayout({ children }) {
 
   const title = 'Artisans';
   return (
     <>
     
-    <MyHead />
+   <MyHead />
 
-    
-    <Navbar />
-   
+     <div className={styles.nav}> 
+    <HomeNav />
+    <Search />
+    </div>
     <div className={styles.container_main}>
     <main className={styles.main}>
      {children} 
@@ -37,4 +38,4 @@ function DefaultLayout({ children }) {
   )
 }
 
-export default DefaultLayout
+export default HomeLayout

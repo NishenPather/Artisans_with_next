@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useAuth } from '../../context/auth';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.css'
-import classNames from 'classnames'
+
 
 /*
 <BootstrapNavbar.Brand> 
@@ -12,14 +12,14 @@ import classNames from 'classnames'
 </BootstrapNavbar.Brand>
 */
 
-export default function Navbar() {
+export default function HomeNav() {
     const { isAuthenticated } = useAuth()
     return (
       <div style={{width: "85%", backgroundColor: "#ffffff00", marginLeft: "75px"}}> 
         <BootstrapNavbar expand="lg">
        <BootstrapNavbar.Brand> 
          <Link href='/'>
-              <div style={{ cursor: 'pointer', display: 'flex' }}><Image src='/a3.svg' alt='Home' width='100' height='100' /> </div>    
+              <div style={{ cursor: 'pointer', display: 'flex' }}><Image src='/a3.svg' alt='Home' width='100' height='100' className={styles.logo} /><h1 className={styles.mainHeading}>rtisans</h1> </div>    
           </Link> 
         </BootstrapNavbar.Brand>  
                 <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />

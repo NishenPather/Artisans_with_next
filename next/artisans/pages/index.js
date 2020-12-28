@@ -1,30 +1,29 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import  DefaultLayout from '../components/Layout/Layout'
+import Image from 'next/image'
+import HomeLayout from '../components/Layout/HomeLayout'
+import Search from '../components/Search'
+
 
 
 export default function Home() {
+
+  const prop2 = <Search />
   return (
     <>
     
       <div> 
         <div className={styles.grid}> 
-        <div className={styles.card}>
-        <Link href='/map'>
-          <a>
-            <h3 className={styles.link}>Map</h3>
-            <p className={styles.link}>Discover Artisans</p>
-          </a>  
-        </Link>
-        </div>
-        <div className={styles.card}>
         <Link href='/dashboard'>
-          <a>
-            <h3 className={styles.link}>Profile</h3>
-            <p  className={styles.link}>Access your dashboard</p>
-          </a>  
-        </Link>
+        <div className={styles.indexlink}>
+           <div className={styles.card}>
+              <h2 style={{fontFamily: 'Marck Script, cursive', textAlign: 'center'}}>Profile</h2>
+              <h3 style={{fontFamily: 'Marck Script, cursive',textAlign: 'center'}}>Access your dashboard</h3>
+              <Image src="/yellow-min.jpg" alt='dashboard' width='250' height='200' className={styles.cardimg} />
+            </div>
         </div>
+        </Link>
+        
         
         </div>
         </div>
@@ -32,4 +31,4 @@ export default function Home() {
   )
 }
 
-Home.Layout = DefaultLayout
+Home.Layout = HomeLayout
